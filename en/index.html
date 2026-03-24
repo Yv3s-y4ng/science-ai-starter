@@ -4,10 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Using AI for Research: A Practical Guide for Non-CS Labs</title>
-  <meta name="description" content="A practical starter guide for science and engineering researchers who want to use AI terminal agents to accelerate their work — no CS background required.">
+  <meta name="description" content="A practical starter guide for science and engineering researchers who want to use AI terminal agents to accelerate their work - no CS background required.">
+  <meta property="og:title" content="Using AI for Research: A Practical Guide for Non-CS Labs">
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
+
+  <nav class="toc" aria-label="Table of contents">
+    <ul>
+      <li><a href="#s1">How You Use AI</a></li>
+      <li><a href="#s2">What's Missing</a></li>
+      <li><a href="#s3">AI Terminal Agents</a></li>
+      <li><a href="#s4">Which Tool</a></li>
+      <li><a href="#s5">Lab Use Cases</a></li>
+      <li><a href="#s6">Skills and MCP</a></li>
+      <li><a href="#s7">Resources</a></li>
+      <li><a href="#s8">Acknowledgments</a></li>
+      <li><a href="#s9">Live Example</a></li>
+    </ul>
+  </nav>
 
   <div class="lang-switch">
     <a href="../">中文</a>
@@ -15,100 +30,117 @@
 
   <main>
 
+    <!-- ── Mobile TOC ─────────────────────────────────────── -->
+
+    <details class="toc-mobile">
+      <summary>Contents</summary>
+      <ul>
+        <li><a href="#s1">How You Use AI</a></li>
+        <li><a href="#s2">What's Missing</a></li>
+        <li><a href="#s3">AI Terminal Agents</a></li>
+        <li><a href="#s4">Which Tool</a></li>
+        <li><a href="#s5">Lab Use Cases</a></li>
+        <li><a href="#s6">Skills and MCP</a></li>
+        <li><a href="#s7">Resources</a></li>
+        <li><a href="#s8">Acknowledgments</a></li>
+        <li><a href="#s9">Live Example</a></li>
+      </ul>
+    </details>
+
     <!-- ── Header ─────────────────────────────────────────── -->
 
     <header class="site-header">
       <p class="eyebrow">Practical Starter Guide</p>
       <h1>Using AI for Research: A Practical Guide for Non-CS Labs</h1>
-      <p class="subtitle">How to connect your domain expertise to AI's execution power — without becoming a programmer.</p>
+      <p class="subtitle">Connect the professional judgment you already have to AI's execution power, without becoming a programmer.</p>
     </header>
 
     <!-- ── Opening Hook ───────────────────────────────────── -->
 
     <div class="hook">
-      <span class="stat-line">16 months. 41&times;.</span>
-      <span class="stat-sub">Anthropic data: AI completes the same software task 41&times; faster than it did 16 months ago.</span>
+      <span class="stat-line">16 months. 41x.</span>
+      <span class="stat-sub">Anthropic data: AI completes the same software task 41 times faster than it did 16 months ago.</span>
 
-      <p>Naval Ravikant said it plainly: software was eaten by AI. Anthropic's product lead put it another way: the journey from idea to working prototype has collapsed from weeks to hours.</p>
+      <p>Naval said: software was eaten by AI. Anthropic's head of product said: the path from idea to prototype has already collapsed from weeks to hours.</p>
 
-      <p>We are entering an era of radically cheap execution. Writing code, producing charts, drafting reports — the cost of <em>getting things done</em> is falling faster than most of us expected.</p>
+      <p>We are entering an era of exploding execution power. Writing code, making figures, producing reports - the barrier to "getting something built" is falling toward zero faster than most of us expected.</p>
 
       <p>But there is one thing AI cannot give you: <strong>judgment</strong>.</p>
 
-      <p>Knowing which experiment to run next. Noticing that something looks off in your data. Recognizing where the logic breaks in a manuscript. That comes from years of accumulated domain intuition — the kind that only you have. Someone put it well: the ceiling of AI's usefulness is precisely your knowledge boundary, your command of the field's vocabulary, your curiosity about its details.</p>
+      <p>Knowing what experiment to run, noticing what is wrong with a dataset, seeing where the logic breaks in a manuscript - that comes from the professional intuition you have accumulated in your field. Someone put it well: AI's capability boundary is your knowledge boundary, your command of field-specific vocabulary, and your curiosity about the details of the domain.</p>
 
-      <p>That judgment is your real competitive advantage in an AI-powered world.</p>
+      <p>That is the real moat anyone has in the age of AI.</p>
     </div>
 
     <blockquote class="key-quote">
-      <p>This guide is about one thing: how to connect the domain expertise you already have to AI's execution power.</p>
+      <p>This document is trying to explain one thing: <strong>how to connect the professional judgment you already have to AI's execution power.</strong></p>
     </blockquote>
 
     <!-- ── Section 1 ───────────────────────────────────────── -->
 
-    <h2>How You Currently Use AI</h2>
+    <h2 id="s1">How You Currently Use AI</h2>
 
-    <p>You probably use ChatGPT or a similar tool to rewrite text, translate passages, decode error messages, or generate images. You paste something in, get a response, copy it out, and paste the next thing in.</p>
+    <p>You probably use ChatGPT to rewrite text, translate, explain error messages, or generate images, then copy and paste the result back into your work. Paste something in, get an answer, copy it out, paste the next thing in.</p>
 
-    <p>This is genuinely useful. But notice the pattern: <strong>you are the one doing all the moving</strong>. You read the file, you copy the content, you run the code, you come back with the output, you paste it in again.</p>
+    <p>That is already useful. But notice the operating pattern: <strong>you are doing all the moving</strong>. You read the file, you copy the content, you run the code, you bring back the output, and then you paste it in again.</p>
 
-    <p>There is a name for this pattern: you are doing AI's labor.</p>
+    <p>There is a name for this pattern: you are working for the AI.</p>
 
-    <p>You have become the interface between the AI and your actual work — manually shuttling information back and forth, session after session. The AI sits behind glass; you are the one pressing all the buttons.</p>
+    <p>You have become the interface between the AI and your real work, manually transporting information back and forth over and over. The AI sits behind glass; you are the one pressing all the buttons.</p>
 
     <!-- ── Section 2 ───────────────────────────────────────── -->
 
-    <h2>What's Missing</h2>
+    <h2 id="s2">What's Missing</h2>
 
-    <p>The copy-paste loop exists because of four structural limitations in how most people use AI today:</p>
+    <p>The copy-paste loop exists because the way most people use AI today has four structural limits:</p>
 
     <ul>
-      <li><strong>It doesn't know your files.</strong> You have to copy data into the chat window. Paste more than a few dozen rows and the model starts making errors — or simply ignores the end of your input.</li>
-      <li><strong>It can't actually run code.</strong> It writes Python for you, but you still need to set up an environment, execute it, and bring the error message back yourself.</li>
-      <li><strong>Memory resets every session.</strong> Your project context, your previous decisions, your data format conventions — you re-explain everything from scratch each time.</li>
-      <li><strong>It doesn't know if the result is correct.</strong> The chart gets generated, but the AI can't look at it and check whether it makes sense. Only you can do that.</li>
+      <li><strong>It does not know your files.</strong> You have to copy data into the chat box. Once you paste more than a few dozen rows, it starts making mistakes or simply ignores the end.</li>
+      <li><strong>It cannot really run code.</strong> It writes Python for you, but you still have to install the environment, run it yourself, and paste the error back.</li>
+      <li><strong>Its memory resets with every new chat.</strong> Your project background, previous decisions, and data formats all have to be explained again from scratch.</li>
+      <li><strong>It does not know whether the result is correct.</strong> The figure gets generated, but the AI will not look at it and judge whether it makes sense. Only you can do that.</li>
     </ul>
 
     <blockquote>
-      <p>Think of it like a brilliant consultant with amnesia who also can't use a computer. You read every document to them out loud, they give advice, you go execute it yourself, then come back and report what happened — and they've forgotten everything from last time.</p>
+      <p>It is like a high-level consultant with zero memory who also cannot use a computer. You have to read all the materials out loud, they give advice, you go back and execute it yourself, and when you return to report what happened, they have already forgotten the last conversation.</p>
     </blockquote>
 
-    <p>This is not a criticism of AI. It is a description of a usage pattern — one that can be changed.</p>
+    <p>This is not criticizing AI. It is describing a way of using it, and that way of using it can change.</p>
 
     <!-- ── Section 3 ───────────────────────────────────────── -->
 
-    <h2>What an AI Terminal Agent Is</h2>
+    <h2 id="s3">What an AI Terminal Agent Is</h2>
 
-    <p>An AI terminal agent removes the glass. Instead of sitting behind a chat window waiting for you to paste things, it operates directly on your computer: reading files, writing and running code, checking outputs, fixing errors, and iterating — all on its own.</p>
+    <p>An AI terminal agent removes the glass. Instead of waiting behind a chat window for you to paste things in, it directly operates files and programs on your computer: opening files, writing code, running it, checking the result, spotting problems, revising, and running again, all by itself.</p>
 
-    <p>You say: "Analyze this dataset." It opens the file, writes the analysis code, runs it, reads the output, spots a problem, fixes it, runs it again, and shows you the result. You didn't do anything in between.</p>
+    <p>You say, "Help me analyze this dataset," and it opens the file, writes the code, runs it, looks at the output, notices a problem, fixes it, runs it again, and then shows you the result. You did not have to do anything in between.</p>
 
-    <p>Your role shifts from <strong>executor</strong> to <strong>approver</strong>. The agent does the work; you decide whether the result is acceptable.</p>
+    <p>Your role shifts from <strong>executor</strong> to <strong>approver</strong>. It does the work; you decide whether the result is acceptable.</p>
 
     <div class="scenario">
       <h3>Before <span class="num">copy-paste loop</span></h3>
-      <p>You open the file. You copy a slice of the data. You paste it into the chat. You ask a question. You copy the code it returns. You open your terminal. You run the code. You get an error. You copy the error. You paste it back. You copy the fix. You run it again. You copy the output. You paste it back for interpretation. You copy the interpretation. You paste it into your notes.</p>
+      <p>You open the file. You copy a piece of data. You paste it into the chat. You ask a question. You copy the code it returns. You open a terminal. You run the code. You get an error. You copy the error. You paste it back. You copy the fix. You run it again. You copy the output. You paste it back for interpretation. You copy the interpretation. You paste it into your notes.</p>
     </div>
 
     <div class="scenario">
-      <h3>After <span class="num">terminal agent</span></h3>
-      <p>You describe what you want. The agent opens the file, writes the code, runs it, reads the output, catches the error, fixes it, re-runs, and returns the result. You review and say whether to proceed.</p>
+      <h3>Now <span class="num">terminal agent</span></h3>
+      <p>You describe what you want. It opens the file, writes code, runs the code, reads the output, notices the error, fixes it, reruns it, and returns the result to you. You look once and decide whether to continue.</p>
     </div>
 
-    <p>One important note: agents make mistakes. That is why the "approver" role is non-negotiable — it is not a flaw in the workflow, it is the workflow. You bring the judgment; the agent brings the execution.</p>
+    <p>One point needs to be explicit: it will make mistakes. That is why the "approver" role cannot be removed. This is not a flaw in the workflow; it is the workflow itself. You provide the judgment, and it provides the execution.</p>
 
     <!-- ── Section 4 ───────────────────────────────────────── -->
 
-    <h2>Which Tool to Use</h2>
+    <h2 id="s4">Which Tool to Use</h2>
 
-    <p>Four tools are worth knowing about, from zero-setup to full terminal agent.</p>
+    <p>There are four tools worth knowing about, each with a different balance between zero setup and full capability.</p>
 
     <div class="table-wrap">
       <table>
         <thead>
           <tr>
             <th>Tool</th>
-            <th>What it is</th>
+            <th>Positioning</th>
             <th>Barrier</th>
             <th>Cost</th>
           </tr>
@@ -116,26 +148,26 @@
         <tbody>
           <tr>
             <td><strong>happycapy</strong></td>
-            <td>An agent-native computer in your browser — no install, no setup, no command line</td>
-            <td>Zero — open and go</td>
-            <td>Free tier; Max plan unlimited tokens</td>
-          </tr>
-          <tr>
-            <td><strong>Cursor</strong></td>
-            <td>AI-powered code editor with a graphical interface</td>
-            <td>Low — feels like using a text editor</td>
-            <td>Free tier available</td>
+            <td>An AI-native computer in the browser, with no environment setup required</td>
+            <td>Lowest, open and use it</td>
+            <td>Free tier available, Max has unlimited tokens</td>
           </tr>
           <tr>
             <td><strong>Kimi Code</strong></td>
-            <td>AI terminal agent from Moonshot AI; direct Claude Code competitor</td>
-            <td>Medium — command-line based</td>
-            <td>Token-based; roughly 1/10 the cost of Claude</td>
+            <td>A domestic terminal agent that directly competes with Claude Code</td>
+            <td>Medium</td>
+            <td>Token-based, about 1/10 the cost of Claude</td>
+          </tr>
+          <tr>
+            <td><strong>Cursor</strong></td>
+            <td>An AI-enabled code editor with a friendly interface</td>
+            <td>Low, like using Word</td>
+            <td>Usable on the free tier</td>
           </tr>
           <tr>
             <td><strong>Claude Code + Kimi API</strong></td>
-            <td>Claude Code framework running on Kimi's model backend</td>
-            <td>Slightly higher — two environment variables</td>
+            <td>Use the Claude Code framework with Kimi as the model backend</td>
+            <td>Slightly higher</td>
             <td>Same as Kimi pricing</td>
           </tr>
         </tbody>
@@ -146,239 +178,299 @@
 
     <div class="decision-path">
       <ol>
-        <li><strong>Zero barrier, start immediately</strong> — <a href="https://happycapy.ai/?via=yves" target="_blank" rel="noopener">happycapy</a>: open in your browser, no install, no environment setup. Process data, generate charts, write reports, build pages — just describe what you want.</li>
-        <li><strong>First time using a terminal agent</strong> — Start with Cursor. Graphical interface, low friction, and you'll grasp the "approver" model immediately.</li>
-        <li><strong>Want a full terminal agent, China-friendly network</strong> — Kimi Code. Anthropic-API-compatible, no VPN needed.</li>
-        <li><strong>Serious research use, most mature ecosystem</strong> — Claude Code with Kimi API. Full Skills and MCP ecosystem at Kimi's pricing.</li>
+        <li><strong>Zero barrier, start immediately</strong> -> <a href="https://happycapy.ai/?via=yves" target="_blank" rel="noopener">happycapy</a>: open it in the browser and start. No software installation, no environment setup, no command line. Process data, make figures, write reports, build pages, and get results by describing what you want.</li>
+        <li><strong>First time touching a terminal agent</strong> -> Try Cursor first. It has an interface, the barrier is low, and you immediately understand the "approver" model.</li>
+        <li><strong>Want a terminal agent with China-friendly network access</strong> -> Kimi Code, which is compatible with the Anthropic API and does not require a VPN.</li>
+        <li><strong>Want to seriously use this for research projects</strong> -> Claude Code + Kimi API. The ecosystem is the most mature, while the pricing stays at Kimi levels.</li>
       </ol>
     </div>
 
     <h3>Why Kimi is credible</h3>
 
-    <p>In March 2026, something interesting surfaced: Cursor — one of the world's most widely used AI coding tools — released a new flagship model called Composer 2. The community quickly discovered that it was built on Moonshot AI's Kimi K2.5. Cursor's co-founder confirmed it: <em>"We trained on top of the Kimi K2.5 open-source base."</em> Moonshot AI responded: <em>"We're proud that Kimi K2.5 is the foundation for Composer 2."</em></p>
+    <blockquote>
+      <p><strong>In March 2026, something interesting came to light</strong>: Composer 2, the new flagship model from Cursor, one of the world's most popular AI coding tools, was found by the community to be built on Moonshot AI's Kimi K2.5. Cursor's co-founder later acknowledged, "We trained on top of the Kimi K2.5 open-source base." Kimi also responded: "We're proud that Kimi K2.5 is the foundation for Composer 2."</p>
+      <p>Around the same time, another domestic model company, MiniMax, was accused of mixing Kimi code into its own product, even leaving visible "kimi" strings behind. The claim is difficult to verify, but it does suggest that Kimi is already in the first domestic tier for coding capability.</p>
+    </blockquote>
 
-    <p>If the tool millions of developers rely on is built on Kimi, that's a reasonable signal about code capability.</p>
+    <h3>Cost-saving setup</h3>
 
-    <h3>The cost-saving setup</h3>
-
-    <p>Two environment variables are all it takes to run Claude Code's framework with Kimi's model — reducing cost by roughly 90%:</p>
+    <p>Change two environment variables in Claude Code and you can switch the underlying model to Kimi. Keep the Claude Code framework, use the Kimi model, and cut the cost to roughly one tenth of the original:</p>
 
     <span class="code-label">~/.bashrc or ~/.zshrc</span>
     <pre><code>export ANTHROPIC_BASE_URL="https://api.moonshot.cn/anthropic"
-export ANTHROPIC_API_KEY="&lt;your Kimi API key&gt;"</code></pre>
+export ANTHROPIC_API_KEY="your Kimi API Key"</code></pre>
 
-    <p>After that, run <code>claude</code> as usual. The framework is Claude Code; the model is Kimi.</p>
+    <p>After that, run <code>claude</code> as usual. The framework is Claude Code, and the model is Kimi.</p>
 
     <!-- ── Section 5 ───────────────────────────────────────── -->
 
-    <h2>What Your Lab Can Use It For</h2>
+    <h2 id="s5">What Your Lab Can Use It For</h2>
 
-    <p>Here are five scenarios drawn directly from research workflows. Each one describes something you can do today.</p>
+    <p>The following five scenarios come directly from research workflows. Every one of them is something you can do today.</p>
 
     <div class="scenario">
-      <h3><span class="num">01</span> Batch file processing</h3>
-      <p>You have 30 Excel files — one per sample, each with slightly different formatting.</p>
+      <h3><span class="num">01</span> Batch data-file processing</h3>
+      <p>You have 30 Excel files, each one containing measurement results from one sample, and the formats differ slightly.</p>
       <blockquote>
-        <p>"Merge all these files, organize by sample ID, output a summary table, and flag any samples with missing data."</p>
+        <p>"Help me merge these files, organize them by sample ID, output one summary table, and mark which samples have missing data."</p>
       </blockquote>
-      <p>The agent opens each file, handles the formatting inconsistencies, generates the result, and flags anomalies along the way. You review the output.</p>
+      <p>It opens each file, handles the formatting differences, generates the result, and tells you when it notices anomalies along the way.</p>
     </div>
 
     <div class="scenario">
-      <h3><span class="num">02</span> Chart generation</h3>
-      <p>You need publication-ready figures with specific formatting requirements.</p>
+      <h3><span class="num">02</span> Figure generation</h3>
+      <p>You need a figure that meets submission requirements, with specific formatting constraints.</p>
       <blockquote>
-        <p>"Plot this data as a boxplot. X-axis: treatment group. Y-axis: cell viability. Color by control vs. experimental. Save as 300 dpi TIFF. Report the p-values for each comparison."</p>
+        <p>"Use this dataset to draw a boxplot. The x-axis is treatment group, the y-axis is cell viability, color the control and experimental groups differently, save it as a 300 dpi tif, and also tell me the p-values for each group."</p>
       </blockquote>
-      <p>Previously this meant writing Python yourself or clicking through Origin step by step. Now you describe the output and review what comes back.</p>
+      <p>Previously, this meant either writing Python yourself or clicking through Origin step by step. Now you say one sentence and it runs the whole thing and tells you the result.</p>
     </div>
 
     <div class="scenario">
-      <h3><span class="num">03</span> Literature-assisted method design</h3>
-      <p>You have a reference paper whose methods section you need to evaluate for your own experiment.</p>
+      <h3><span class="num">03</span> Reading papers to assist method design</h3>
+      <p>You have a methods section from a reference paper that you need to evaluate and decide whether it fits your experiment.</p>
       <blockquote>
-        <p>"What statistical approach did they use? I have 3 groups, 6 samples each. Is their method appropriate for my setup? Are there better alternatives?"</p>
+        <p>"What statistical method did they use? I now have 3 groups with 6 samples in each. Is their method suitable for my setup? Are there better choices?"</p>
       </blockquote>
-      <p>The agent won't answer the scientific question for you — but it rapidly maps the technical choices in the paper and surfaces the relevant tradeoffs, saving you an hour of searching.</p>
+      <p>It will not think through the scientific question for you, but it can quickly map the technical choices in the paper and save you the time of digging through background materials.</p>
     </div>
 
     <div class="scenario">
       <h3><span class="num">04</span> Journal submission formatting</h3>
-      <p>Different journals have different requirements: Nature requires double spacing and Vancouver references; other journals want specific fonts, bilingual figure captions, or different citation formats.</p>
+      <p>Different journals have different requirements: Nature-series journals want double spacing and Vancouver references; some major Chinese journals require SimSun 5-point font and bilingual figure captions in Chinese and English; Cell-family journals use yet another system.</p>
       <blockquote>
-        <p>"Reformat this manuscript for <em>Journal X</em>. Follow their Author Guidelines. Change 'Figure' to 'Fig.' throughout. Standardize the reference format."</p>
+        <p>"Help me convert this manuscript into the submission format for Journal XXX. Follow their Author Guidelines, change Figure to Fig. throughout, and standardize the reference format."</p>
       </blockquote>
-      <p>When the paper gets rejected and you need to resubmit elsewhere, you just say: "Now reformat for <em>Journal Y</em>." No manual reformatting from scratch.</p>
+      <p>If the same paper gets rejected and has to be submitted elsewhere, you can just say, "Reformat it according to Journal YYY" and you do not have to redo the whole thing by hand.</p>
     </div>
 
     <div class="scenario">
-      <h3><span class="num">05</span> Inheriting legacy code</h3>
-      <p>A former student left the lab. They left behind undocumented scripts. The most important file is called <code>analysis_final_v3_REAL_use_this.py</code>. You don't know what it computes, where the data comes from, or what is safe to change.</p>
+      <h3><span class="num">05</span> Taking over legacy code</h3>
+      <p>A previous student left the lab and left behind a pile of uncommented scripts. The most important file is named <code>analysis_final_v3_REAL_use_this.py</code>. You do not know what it computes, where the data comes from, or what changes are safe.</p>
       <blockquote>
-        <p>"Read through this folder. Explain the data flow, what each script does, and the variable naming conventions."</p>
+        <p>"Read and understand this code. Tell me what the data flow is, what each script does, and what the naming pattern of the variables is."</p>
       </blockquote>
-      <p>You get a plain-English explanation of the codebase. Then:</p>
+      <p>It gives you a plain-language explanation and helps you understand the logic of the code. Then:</p>
       <blockquote>
-        <p>"We switched instruments. The output format changed. Update the data-loading section only — leave the rest of the logic alone."</p>
+        <p>"We switched to a new instrument and the output format changed. Help me modify only the data-reading part and leave the rest of the logic untouched."</p>
       </blockquote>
-      <p>The agent pinpoints exactly what needs to change. Lab handoffs, project continuity, reproducing results from two years ago — in all these situations, the agent acts as the institutional memory that was never written down.</p>
+      <p>It can pinpoint exactly what needs to change without rewriting the whole script. When lab members leave, projects are handed off, or your advisor asks you to reproduce results from two years ago, AI effectively fills in as the always-online "senior person" your lab never documented.</p>
     </div>
 
     <div class="summary-callout">
-      <p>What these tasks have in common: they used to require either learning a programming language or doing the same manual steps over and over. Now the barrier is simply knowing what result you want.</p>
+      <p>What these tasks have in common is this: before, either you had to learn a language to do them, or you had to repeat the same manual operations again and again. Now the barrier becomes: <strong>you only need to know what result you want.</strong></p>
     </div>
 
     <!-- ── Section 6 ───────────────────────────────────────── -->
 
-    <h2>Going Further: Skills &amp; the MCP Ecosystem</h2>
+    <h2 id="s6">Going Further: Skills and the MCP Ecosystem</h2>
 
-    <h3>Skills: reusable expertise</h3>
+    <h3>Skills: reusable expert experience</h3>
 
-    <p>A Skill is a set of written instructions that tells the agent how to handle a recurring type of task — a template for judgment, saved and reused.</p>
+    <p>A Skill is a written instruction set that tells the AI how to handle a recurring type of task. It is like turning experience into a reusable template.</p>
 
-    <p>The important thing: <strong>you don't have to write these yourself.</strong> Claude Code has an open community where developers and researchers continuously contribute Skills — statistical analysis, code review, literature reading, manuscript editing. You can install and use them directly.</p>
+    <p><strong>The important thing is: you do not have to write these Skills yourself.</strong> Claude Code has an open community where developers and researchers continuously contribute all kinds of Skills - statistical analysis, code review, literature reading, manuscript polishing, and more. You can install and use them directly.</p>
 
-    <p>Skills your lab could write for its own workflows:</p>
+    <p>Things a lab could write for itself:</p>
 
     <div class="skills-list">
-      <div class="skill-item"><code>/submission-format</code> — Reformat manuscript per journal Author Guidelines</div>
-      <div class="skill-item"><code>/statistical-test</code> — Recommend the right test given your experimental design</div>
-      <div class="skill-item"><code>/data-check</code> — Scan for missing values, outliers, unit inconsistencies</div>
-      <div class="skill-item"><code>/abstract-polish</code> — Check abstract structure; flag logic gaps between methods, results, and conclusions</div>
+      <div class="skill-item"><code>/submission-format</code> - Format a manuscript according to a journal's Author Guidelines</div>
+      <div class="skill-item"><code>/statistical-test</code> - Recommend an appropriate method based on the experimental design</div>
+      <div class="skill-item"><code>/data-check</code> - Automatically check for missing values, outliers, and inconsistent units</div>
+      <div class="skill-item"><code>/abstract-polish</code> - Check an abstract against a methods-results-conclusion structure and mark logical jumps</div>
     </div>
 
     <h3>MCP: connect the tools you already use</h3>
 
-    <p>MCP (Model Context Protocol) is an open protocol from Anthropic that lets AI agents call external applications directly. There is a large open-source ecosystem of ready-made integrations.</p>
+    <p>MCP (Model Context Protocol) is an open protocol introduced by Anthropic that lets AI directly call external applications. There is a large open-source community ecosystem around it.</p>
 
     <div class="table-wrap">
       <table>
         <thead>
           <tr>
             <th>MCP</th>
-            <th>What it enables</th>
+            <th>What it can do</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong>Notion / Lab notebook apps</strong></td>
-            <td>Automatically log experiment records into a structured database; generate meeting summaries</td>
+            <td><strong>Notion / Feishu</strong></td>
+            <td>Automatically organize experiment records into a database and generate meeting notes</td>
           </tr>
           <tr>
             <td><strong>GitHub</strong></td>
-            <td>Read repositories, commit changes, manage version history</td>
+            <td>Read repositories, submit changes, and manage versions</td>
           </tr>
           <tr>
             <td><strong>Email client</strong></td>
-            <td>Draft peer-review responses, submission confirmation emails</td>
+            <td>Draft reviewer responses and submission-confirmation emails</td>
           </tr>
           <tr>
             <td><strong>Literature databases</strong></td>
-            <td>Search PubMed, export citation formats (requires additional configuration)</td>
+            <td>Search PubMed and export citation formats, with additional setup</td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <p>Official MCP registry: <a href="https://modelcontextprotocol.io" target="_blank" rel="noopener">modelcontextprotocol.io</a></p>
+    <p>Official MCP list: <a href="https://modelcontextprotocol.io" target="_blank" rel="noopener">modelcontextprotocol.io</a></p>
 
     <h3>Why the ecosystem matters</h3>
 
     <blockquote>
-      <p>You don't need to be an expert to use expert-level skills. When a statistician encodes their analytical method as a Skill, when a seasoned editor puts their revision logic into a workflow — that experience becomes something you can call directly, without having to learn it from scratch.</p>
-      <p>Start by standing on others' shoulders. As you use these tools, you will gradually understand the logic underneath.</p>
-      <p>And once you understand your lab's own workflow — how you clean this type of data, what this journal field requires, what your standard mass-spec protocol looks like — you can write those patterns as Skills and share them. Researchers doing the same kind of work anywhere in the world can use what you built.</p>
+      <p>You do not need to be an expert right now, but you can directly use skills written by experts.</p>
+      <p>When a statistician packages an analysis method as a Skill, and when an experienced editor writes their polishing logic into a workflow, that experience becomes a capability you can call directly without learning it all from scratch.</p>
+      <p>First stand on the shoulders of giants and get the work done. In that process, you will gradually understand the logic underneath. Once you understand your lab's own workflow - how to clean this kind of data, what to watch out for when submitting to journals in this field, what your group's standard mass spectrometry workflow is - you can write that experience into a Skill and publish it so people around the world doing similar research can use it.</p>
     </blockquote>
 
-    <p><strong>You're not just a user of tools — you can be someone who adds capabilities to them.</strong></p>
+    <p><strong>You are not just someone who uses tools. You can also be someone who adds capabilities to them.</strong></p>
 
     <!-- ── Section 7 ───────────────────────────────────────── -->
 
-    <h2>Further Resources</h2>
+    <h2 id="s7">Further Resources</h2>
 
     <div class="resource-group">
-      <h3>Source Materials</h3>
+      <h3>Original source materials</h3>
       <ul>
-        <li><a href="https://github.com/aspi6246/ClaudeCodeTools/blob/main/Presentations/main.pdf" target="_blank" rel="noopener">Claude Code for Academics (slides)</a> — Alessandro Spina, UTS Finance Brownbag, March 2026</li>
-        <li><a href="https://claude.com/blog/product-management-on-the-ai-exponential" target="_blank" rel="noopener">Product Management on the AI Exponential</a> — Cat Wu, Anthropic Blog, 2026</li>
+        <li><a href="https://github.com/aspi6246/ClaudeCodeTools/blob/main/Presentations/main.pdf" target="_blank" rel="noopener">Claude Code for Academics (original English presentation)</a> - Alessandro Spina, UTS, March 2026</li>
+        <li><a href="https://claude.com/blog/product-management-on-the-ai-exponential" target="_blank" rel="noopener">Anthropic blog: Product Management on the AI Exponential</a> - Cat Wu, 2026</li>
       </ul>
     </div>
 
     <div class="resource-group">
-      <h3>Tool Links</h3>
+      <h3>Tool links</h3>
       <ul>
-        <li><a href="https://cursor.sh" target="_blank" rel="noopener">Cursor</a> — Graphical interface, lowest barrier to entry</li>
-        <li><a href="https://platform.moonshot.cn" target="_blank" rel="noopener">Kimi Code (Moonshot AI)</a> — Terminal agent; Anthropic-API-compatible</li>
-        <li><a href="https://code.claude.com" target="_blank" rel="noopener">Claude Code</a> — Most complete terminal agent ecosystem</li>
-        <li><a href="https://modelcontextprotocol.io" target="_blank" rel="noopener">MCP Registry</a> — Official list of MCP integrations</li>
+        <li><a href="https://platform.moonshot.cn" target="_blank" rel="noopener">Kimi Code (Moonshot AI)</a> - First choice for users in China, Anthropic API compatible</li>
+        <li><a href="https://cursor.sh" target="_blank" rel="noopener">Cursor</a> - Graphical interface, lowest barrier</li>
+        <li><a href="https://code.claude.com" target="_blank" rel="noopener">Claude Code</a> - Most complete feature set</li>
       </ul>
     </div>
 
     <div class="resource-group">
-      <h3>Community &amp; Tutorials</h3>
+      <h3>Community and tutorials</h3>
       <ul>
-        <li><a href="https://causalinf.substack.com" target="_blank" rel="noopener">Cunningham's blog series</a> — 12+ posts on Claude Code for research (English)</li>
-        <li><a href="https://github.com/pedrohcgs/claude-code-my-workflow" target="_blank" rel="noopener">Sant'Anna's workflow</a> — 5-stage research production workflow with Claude Code</li>
-        <li><a href="https://github.com/scunning1975/MixtapeTools" target="_blank" rel="noopener">MixtapeTools Skills library</a> — Ready-to-use research Skills for direct installation</li>
+        <li><a href="https://causalinf.substack.com" target="_blank" rel="noopener">Cunningham's blog series</a> - 12+ posts on using Claude Code for research (in English; recommended to read with live AI translation)</li>
+        <li><a href="https://github.com/pedrohcgs/claude-code-my-workflow" target="_blank" rel="noopener">Sant'Anna workflow</a> - A 5-stage research production workflow</li>
+        <li><a href="https://github.com/scunning1975/MixtapeTools" target="_blank" rel="noopener">MixtapeTools Skills library</a> - A reusable collection of research Skills</li>
+        <li><a href="https://modelcontextprotocol.io" target="_blank" rel="noopener">Official MCP list</a></li>
       </ul>
     </div>
 
     <div class="resource-group">
-      <h3>Open-Source Skill Ecosystems</h3>
+      <h3>Open-source Skill ecosystems</h3>
       <ul>
-        <li><a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">obra/superpowers</a> — Forces AI to follow real software engineering discipline: a 7-stage pipeline (design → plan → sub-agent execution + TDD → review → PR) so AI code goes from "it runs" to actually maintainable (84k+ stars)</li>
-        <li><a href="https://github.com/K-Dense-AI/claude-scientific-skills" target="_blank" rel="noopener">K-Dense-AI/claude-scientific-skills</a> — Ready-to-use Skills for scientific research: bioinformatics, chemistry, data analysis, proteomics and more (16k stars)</li>
-        <li><a href="https://github.com/huggingface/skills" target="_blank" rel="noopener">huggingface/skills</a> — Official Hugging Face Skills for model training, dataset handling, paper publishing; compatible with Claude Code, Cursor, and Gemini CLI (9.8k stars)</li>
+        <li><a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">obra/superpowers</a> - Forces AI to work under real software-engineering discipline: a 7-stage pipeline (design -> plan -> sub-agent execution -> review -> PR), pushing AI coding from merely runnable to actually maintainable (84k+ stars)</li>
+        <li><a href="https://github.com/K-Dense-AI/claude-scientific-skills" target="_blank" rel="noopener">K-Dense-AI/claude-scientific-skills</a> - A ready-to-use Skill library for scientific research, covering bioinformatics, chemistry, data analysis, proteomics, and more (16k stars)</li>
+        <li><a href="https://github.com/huggingface/skills" target="_blank" rel="noopener">huggingface/skills</a> - Official Hugging Face Skills supporting model training, dataset handling, paper publishing, and more; compatible with Claude Code, Cursor, and Gemini CLI (9.8k stars)</li>
       </ul>
     </div>
+
+    <!-- ── Acknowledgments ────────────────────────────────── -->
+
+    <section class="acknowledgments">
+      <h2 id="s8">Acknowledgments</h2>
+
+      <div class="ack-item ack-happycapy">
+        <a href="https://happycapy.ai/?via=yves" target="_blank" rel="noopener">
+          <img src="../assets/happycapy-light.svg" alt="happycapy" class="ack-logo">
+        </a>
+        <div class="ack-body">
+          <p>The framework, design language, and workflow methodology of this guide draw heavily from the documentation and frontier practice of the <a href="https://happycapy.ai/?via=yves" target="_blank" rel="noopener"><strong>happycapy</strong></a> platform. happycapy continuously curates the latest resources from the AI agent ecosystem and provided important insight and inspiration for this article.</p>
+        </div>
+      </div>
+
+      <div class="ack-item">
+        <div class="ack-body">
+          <p><a href="https://people.ucas.ac.cn/~yanghui" target="_blank" rel="noopener"><strong>Prof. Hui Yang</strong></a> and <a href="https://people.ucas.ac.cn/~yi.zhang" target="_blank" rel="noopener"><strong>Prof. Yi Zhang</strong></a> (BioMiND Lab, Shenzhen Institute of Advanced Technology, Chinese Academy of Sciences) - both teachers gave me a deeper understanding of research.</p>
+        </div>
+      </div>
+
+      <div class="ack-item">
+        <div class="ack-body">
+          <p><a href="https://power.seu.edu.cn/dzl/list.htm" target="_blank" rel="noopener"><strong>Prof. Zilong Deng</strong></a> (Southeast University) - thank you for the encouragement and guidance you gave me during my undergraduate years.</p>
+        </div>
+      </div>
+    </section>
 
     <!-- ── Closing ─────────────────────────────────────────── -->
 
     <blockquote class="closing">
-      <p>The tools will change. Models will iterate. Today's recommendations may not be the best choices in three months — that is fine.</p>
-      <p>The real competitive advantage is not in the tools. The five or ten years you spent building domain intuition — knowing which data point looks wrong, recognizing a confounded experimental design, understanding what a result actually means in your field — that is the ceiling of AI's usefulness, not something AI replaces.</p>
-      <p>In an era of abundant execution, judgment is what's scarce. Pick up the tools. The rest is yours.</p>
+      <p>The tools will change, and the models will iterate. What I recommend today may not be the best choice three months from now, and that is fine.</p>
+      <p>The real moat is not in the tools. The field intuition you built over five or ten years - knowing which data point looks wrong, knowing whether an experimental design has confounders, knowing what a result really means in your field - that is the ceiling of AI, not something AI replaces.</p>
+      <p>In an era of exploding execution power, judgment is what becomes scarce. Start using the tools. The rest is up to you.</p>
     </blockquote>
 
     <!-- ── Anthropic Tips ───────────────────────────────────── -->
 
     <div class="tips-section">
-      <h2>Five Principles, Adapted for Research</h2>
-      <p>From Anthropic's internal practices, translated into research terms:</p>
+      <h2>Usage Tips</h2>
+      <p>Distilled from Anthropic's internal practice and translated into a research context:</p>
 
       <div class="table-wrap">
         <table>
           <thead>
             <tr>
               <th>Principle</th>
-              <th>What it means for your lab</th>
+              <th>Research interpretation</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>Demo first, document later</strong></td>
-              <td>Get AI to produce a chart before debating the method. Five minutes of output beats two pages of analysis plan.</td>
+              <td><strong>Demo first, not docs first</strong></td>
+              <td>Get AI to produce a figure first, then discuss whether the method is right. Five minutes to a result beats two pages of analysis planning.</td>
             </tr>
             <tr>
-              <td><strong>Short cycles, not big plans</strong></td>
-              <td>Don't try to "AI-ify your entire workflow." Find the single most annoying task today and try it there first.</td>
+              <td><strong>Short-cycle experiments, not giant plans</strong></td>
+              <td>Do not try to "AI-ify the entire workflow." Start with the single most annoying task you have today.</td>
             </tr>
             <tr>
-              <td><strong>Rerun old problems with new models</strong></td>
-              <td>Something AI couldn't do three months ago might be trivial now. Revisit your hard cases periodically.</td>
+              <td><strong>Rerun old workflows with new models</strong></td>
+              <td>Something AI could not do three months ago may be possible now. Periodically retry old hard problems.</td>
             </tr>
             <tr>
-              <td><strong>Start with the simplest version</strong></td>
-              <td>Describe what you want in plain language first. Don't spend time engineering prompts before you know what works.</td>
+              <td><strong>Do the simplest version first</strong></td>
+              <td>State what you want in the most direct language possible. Do not spend too much time tuning prompts up front.</td>
             </tr>
             <tr>
-              <td><strong>Blur the role boundaries</strong></td>
-              <td>You don't need to become a programmer to run code, or a statistician to do statistics. You need to be able to judge whether the result is right.</td>
+              <td><strong>Blur role boundaries</strong></td>
+              <td>You do not need to become a programmer to run code, and you do not need to become a statistician to do statistics. You need the eye to judge whether the result is right.</td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
+
+    <!-- ── Meta ────────────────────────────────────────────── -->
+
+    <section class="meta-section">
+      <h2 id="s9">This Website Itself Is a Live Example</h2>
+
+      <p>The page you are reading now was made using exactly the approach described in this article.</p>
+
+      <p>The process was this: I had the ideas and the judgment. I knew what a non-CS research group needed, which tools were worth recommending, and how the content logic should flow. The execution part - the design system, the HTML/CSS, the tool research, and the phrasing refinements - was handed to AI. My role was exactly the "approver" described in this article: look once, decide whether it works, request a change, and continue.</p>
+
+      <p>From initial idea to this page going live took only a few hours. If I had done it the traditional way - learning front-end development, hand-writing the code, and adjusting the styles line by line - the same result might have taken days or more.</p>
+
+      <p>This is not about showing how powerful AI is. It is about saying: <strong>the reason this works is the professional judgment you already have.</strong> AI has no way to know on its own what a research group cares about, which analogy will make the point clearest, or which details are worth emphasizing. Those all come from your accumulated understanding of the field.</p>
+
+      <h3>How to do something similar with happycapy</h3>
+
+      <p>The advantage of <a href="https://happycapy.ai/?via=yves" target="_blank" rel="noopener">happycapy</a> is simple: you open the browser and use it, with no environment setup at all. Here is a conversation starting point you can reuse directly:</p>
+
+      <div class="scenario">
+        <h3><span class="num">Example</span> From an Idea to a Page</h3>
+        <blockquote>
+          <p>"I want to make a beginner's guide for researchers in XX field, and the topic is YY. The readers have domain expertise but do not know programming. First help me sort out the content structure, then turn it into a simple HTML page that I can share."</p>
+        </blockquote>
+        <p>Tell it your reference material, your core point, and who your readers are, all in natural language. It will help you break down the structure, draft the content, and generate the page. You are responsible for judging whether each step is correct and whether the direction is still right.</p>
+        <blockquote>
+          <p>"The logic in section two is wrong. It should explain the problem before the solution. Help me adjust that, and leave the rest unchanged."</p>
+        </blockquote>
+        <p>That is the whole thing. You do not need to learn HTML, understand CSS, or know what a server is. You only need to know what you want to say.</p>
+      </div>
+
+      <p class="meta-note">This page was built with assistance from <a href="https://happycapy.ai/?via=yves" target="_blank" rel="noopener">happycapy</a>. The content was written and reviewed by Yves Yang.</p>
+    </section>
 
   </main>
 
@@ -388,20 +480,36 @@ export ANTHROPIC_API_KEY="&lt;your Kimi API key&gt;"</code></pre>
     <p class="footer-note">
       <strong>Sources:</strong> Alessandro Spina, <em>Claude Code for Academics</em>, UTS Finance Brownbag, March 2026 &middot;
       Cat Wu, <em>Product Management on the AI Exponential</em>, Anthropic Blog, 2026 &middot;
-      METR Research — task completion speed benchmarks &middot;
+      METR Research - Opus 4.6 vs Sonnet 3.5 speed comparison data &middot;
       TechCrunch, <em>Cursor admits its new coding model was built on top of Moonshot AI's Kimi</em>, March 22, 2026 &middot;
-      Naval Ravikant — "Software was eaten by AI"
+      Naval Ravikant - "Software was eaten by AI" &middot;
+      Yves Yang (@SelfBystander) - AI's capability boundary is the boundary of your knowledge
     </p>
     <p class="footer-note">
-      This guide draws substantially on documentation and design from
-      <a href="https://happycapy.com" target="_blank" rel="noopener">HappyCapy</a> —
-      an AI-native research platform. Their work made this possible.
-    </p>
-    <p class="footer-note">
-      Content licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>.
-      Written with Claude Code.
+      Content licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>. Written with assistance from Claude Code.
     </p>
   </footer>
 
+<script>
+  (function() {
+    const ids = ['s1','s2','s3','s4','s5','s6','s7','s8','s9'];
+    const links = {};
+    ids.forEach(id => {
+      const a = document.querySelector('.toc a[href="#' + id + '"]');
+      if (a) links[id] = a;
+    });
+    function update() {
+      let current = ids[0];
+      ids.forEach(id => {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= 120) current = id;
+      });
+      Object.values(links).forEach(a => a.classList.remove('active'));
+      if (links[current]) links[current].classList.add('active');
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  })();
+</script>
 </body>
 </html>
