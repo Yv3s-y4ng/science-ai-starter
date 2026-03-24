@@ -1,0 +1,5 @@
+superpowers
+k dense的库
+每个人即使非技术背景 也要有打开github找资源的能力了 找到并跑起来不难了
+anthropic 官方教程
+happycapy平台（在致谢里重点写）

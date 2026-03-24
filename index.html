@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>用 AI 做科研：非计算机课题组实用入门</title>
+  <meta name="description" content="面向理工科非编程课题组的 AI 终端智能体实用入门指南——读完就想试，知道第一步怎么做。">
+  <meta property="og:title" content="用 AI 做科研：非计算机课题组实用入门">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+  <div class="lang-switch">
+    <a href="en/">English</a>
+  </div>
+
+  <main>
+
+    <!-- ── Header ─────────────────────────────────────────── -->
+
+    <header class="site-header">
+      <p class="eyebrow">实用入门指南</p>
+      <h1>用 AI 做科研：非计算机课题组实用入门</h1>
+      <p class="subtitle">把你已有的专业判断力，接上 AI 的执行力——不需要成为程序员。</p>
+    </header>
+
+    <!-- ── Opening Hook ───────────────────────────────────── -->
+
+    <div class="hook">
+      <span class="stat-line">16 个月。41 倍。</span>
+      <span class="stat-sub">Anthropic 数据：AI 完成同一软件任务的速度，是 16 个月前的 41 倍。</span>
+
+      <p>Naval 说：软件被 AI 吃掉了。Anthropic 的产品负责人说：从想法到原型，已经从几周缩短到几小时。</p>
+
+      <p>我们正在进入一个执行力暴涨的时代。写代码、画图、出报告——这些"做出来"的门槛，正在以你我都没预料到的速度趋近于零。</p>
+
+      <p>但有一件事 AI 给不了你：<strong>判断力</strong>。</p>
+
+      <p>知道该做什么实验、知道这个数据哪里有问题、知道这篇稿子的逻辑在哪里断了——这来自你在这个领域里积累的专业直觉。有人说得很准：AI 的能力边界，就是你的知识边界、你掌握的专业词汇、你对这个领域细节的好奇心。</p>
+
+      <p>这才是每个人在 AI 时代真正的护城河。</p>
+    </div>
+
+    <blockquote class="key-quote">
+      <p>这篇文档想讲的是：<strong>如何把你已有的专业判断力，接上 AI 的执行力。</strong></p>
+    </blockquote>
+
+    <!-- ── Section 1 ───────────────────────────────────────── -->
+
+    <h2>你现在在用 AI 做什么</h2>
+
+    <p>你可能在用 ChatGPT 改文字、翻译、解释 error message，或者生图，再复制粘贴回去。贴进去，得到回答，复制出来，再贴下一段。</p>
+
+    <p>这已经很有用了。但注意这个操作模式：<strong>所有的搬运都是你在做</strong>。你读文件、你复制内容、你跑代码、你拿回输出、你再贴进去。</p>
+
+    <p>这种模式有个名字：你在替 AI 打工。</p>
+
+    <p>你变成了 AI 和你真正工作之间的接口——一次又一次地手动搬运信息。AI 坐在玻璃后面；你是那个按所有按钮的人。</p>
+
+    <!-- ── Section 2 ───────────────────────────────────────── -->
+
+    <h2>差在哪里</h2>
+
+    <p>复制粘贴循环的存在，是因为今天大多数人使用 AI 的方式有四个结构性限制：</p>
+
+    <ul>
+      <li><strong>它不认识你的文件。</strong>你得把数据复制进对话框——超过几十行就开始出错，或者直接把后面的内容忽略掉。</li>
+      <li><strong>它不能真正跑代码。</strong>它给你写了 Python，但你还得自己去装环境、跑、再把报错贴回来。</li>
+      <li><strong>每次新对话记忆清零。</strong>你的项目背景、上次的决定、数据格式——每次都要重新解释一遍。</li>
+      <li><strong>它不知道结果对不对。</strong>图生出来了，但 AI 自己不会看、不会判断结果是否合理。只有你能做这件事。</li>
+    </ul>
+
+    <blockquote>
+      <p>像一个记忆力为零、不会用电脑的高级顾问——你得把所有材料念给他听，他给意见，你回去自己执行，执行完你再来汇报，而他已经把上次的对话忘得干干净净。</p>
+    </blockquote>
+
+    <p>这不是在批评 AI，而是在描述一种使用方式——一种可以改变的使用方式。</p>
+
+    <!-- ── Section 3 ───────────────────────────────────────── -->
+
+    <h2>AI 终端智能体是什么</h2>
+
+    <p>AI 终端智能体把玻璃拿掉了。它不再坐在对话框后面等你贴东西，而是直接操作你电脑上的文件和程序：打开文件、写代码、运行、看结果、发现问题、修改、再运行——全部自己来。</p>
+
+    <p>你说"帮我分析这份数据"——它会自己打开文件、写代码、运行、看结果、发现问题、修改、再运行，然后把结果给你看。中间你什么都没做。</p>
+
+    <p>你的角色从<strong>执行者</strong>变成了<strong>审批者</strong>。它干活，你决定结果要不要。</p>
+
+    <div class="scenario">
+      <h3>之前 <span class="num">复制粘贴循环</span></h3>
+      <p>你打开文件。你复制一段数据。你贴进对话框。你问问题。你复制它返回的代码。你打开终端。你跑代码。你遇到报错。你复制报错。你贴回去。你复制修复方案。你再跑。你复制输出结果。你贴回去让它解读。你复制解读。你贴进你的笔记。</p>
+    </div>
+
+    <div class="scenario">
+      <h3>现在 <span class="num">终端智能体</span></h3>
+      <p>你描述你想要什么。它打开文件、写代码、跑代码、读输出、发现报错、修复、重跑，把结果返回给你。你看一眼，决定要不要继续。</p>
+    </div>
+
+    <p>有一点需要说清楚：它会犯错。所以"审批者"这个角色不能省——这不是工作流的缺点，这就是工作流本身。判断力由你提供，执行力交给它。</p>
+
+    <!-- ── Section 4 ───────────────────────────────────────── -->
+
+    <h2>工具选哪个</h2>
+
+    <p>有三个工具值得了解，从门槛最低到功能最全各有侧重。</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>工具</th>
+            <th>定位</th>
+            <th>门槛</th>
+            <th>费用</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Kimi Code</strong></td>
+            <td>国产终端智能体，直接对标 Claude Code</td>
+            <td>中等</td>
+            <td>按 token，约 Claude 1/10</td>
+          </tr>
+          <tr>
+            <td><strong>Cursor</strong></td>
+            <td>带 AI 的代码编辑器，界面友好</td>
+            <td>最低，像用 Word</td>
+            <td>免费版可用</td>
+          </tr>
+          <tr>
+            <td><strong>Claude Code + Kimi API</strong></td>
+            <td>用 CC 框架，接 Kimi 模型</td>
+            <td>稍高</td>
+            <td>同 Kimi 价格</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>推荐逻辑</h3>
+
+    <div class="decision-path">
+      <ol>
+        <li><strong>第一次接触</strong> → 先试 Cursor，有界面、门槛最低，立刻能理解"审批者"模式。</li>
+        <li><strong>想用终端智能体、国内网络友好</strong> → Kimi Code，兼容 Anthropic API，无需 VPN。</li>
+        <li><strong>认真用起来做科研项目</strong> → Claude Code + Kimi API，生态最成熟，价格按 Kimi 算。</li>
+      </ol>
+    </div>
+
+    <h3>Kimi 为什么靠谱</h3>
+
+    <blockquote>
+      <p><strong>2026 年 3 月，一件有意思的事被曝光</strong>：Cursor（全球最受欢迎的 AI 编程工具之一）的新旗舰模型 Composer 2，被社区发现底层用的是 Moonshot AI（月之暗面）的 Kimi K2.5 模型。Cursor 联合创始人随后承认，"我们从 Kimi K2.5 的开源基础上继续训练"。Kimi 官方也回应："我们为 Kimi K2.5 成为 Composer 2 的基础感到骄傲。"</p>
+      <p>同一时期，另一家国内大模型公司 MiniMax 被指在自家产品中混入了 Kimi 的代码（连 kimi 字样都没改干净）——真实性存疑，但可以说明 Kimi 在代码能力上已经处于国内第一梯队。</p>
+    </blockquote>
+
+    <h3>省钱操作</h3>
+
+    <p>在 Claude Code 里改两行环境变量，就能把底层模型换成 Kimi——框架用 Claude Code，模型用 Kimi，成本约降至原来的 1/10：</p>
+
+    <span class="code-label">~/.bashrc 或 ~/.zshrc</span>
+    <pre><code>export ANTHROPIC_BASE_URL="https://api.moonshot.cn/anthropic"
+export ANTHROPIC_API_KEY="你的 Kimi API Key"</code></pre>
+
+    <p>之后照常运行 <code>claude</code>，框架是 Claude Code，模型是 Kimi。</p>
+
+    <!-- ── Section 5 ───────────────────────────────────────── -->
+
+    <h2>课题组能用来做什么</h2>
+
+    <p>以下五个场景直接来自科研工作流，每一个今天就能做。</p>
+
+    <div class="scenario">
+      <h3><span class="num">01</span> 批量处理数据文件</h3>
+      <p>你有 30 个 Excel 表，每个是一个样品的测量结果，格式略有差异。</p>
+      <blockquote>
+        <p>"帮我把这些文件合并，按样品编号整理，输出一张汇总表，标注哪些样品数据缺失。"</p>
+      </blockquote>
+      <p>它会自己打开每个文件、处理格式不一致的问题、生成结果，中途发现异常还会告诉你。</p>
+    </div>
+
+    <div class="scenario">
+      <h3><span class="num">02</span> 生成图表</h3>
+      <p>你需要符合投稿要求的图，有具体的格式规定。</p>
+      <blockquote>
+        <p>"用这份数据画箱线图，x 轴是处理组别，y 轴是细胞活力，颜色区分对照和实验组，存成 300dpi tif，顺便告诉我各组的 p 值。"</p>
+      </blockquote>
+      <p>之前这件事要么你自己写 Python，要么在 Origin 里一步一步操作。现在说一句话，它跑完告诉你结果。</p>
+    </div>
+
+    <div class="scenario">
+      <h3><span class="num">03</span> 读文献辅助方法设计</h3>
+      <p>你有一篇参考文献的方法部分需要评估，看是否适用于你的实验。</p>
+      <blockquote>
+        <p>"他们的统计方法是什么？我现在有 3 组、每组 6 个样本，用他们的方法合适吗？有没有更好的选择？"</p>
+      </blockquote>
+      <p>它不会替你思考科学问题，但它能帮你快速摸清文献里的技术选型，节省你查资料的时间。</p>
+    </div>
+
+    <div class="scenario">
+      <h3><span class="num">04</span> 期刊投稿排版</h3>
+      <p>不同期刊要求不一样：Nature 系列要双倍行距、参考文献 Vancouver 格式；某些中文核心要宋体五号、图题中英文双语；投 Cell 子刊又是另一套。</p>
+      <blockquote>
+        <p>"帮我把这篇稿子改成《XXX》的投稿格式，参考他们官网的 Author Guidelines，图序从 Figure 改成 Fig.，参考文献格式统一。"</p>
+      </blockquote>
+      <p>如果同一篇稿子被拒、要投另一个刊，再说一句："按《YYY》的格式重新排"——不用重新手工改一遍。</p>
+    </div>
+
+    <div class="scenario">
+      <h3><span class="num">05</span> 接手历史遗留代码</h3>
+      <p>前任学生离组，留下一堆没有注释的脚本，最重要的文件叫 <code>analysis_final_v3_REAL_use_this.py</code>。你不确定它在算什么、数据从哪来、改哪里会出问题。</p>
+      <blockquote>
+        <p>"读懂这些代码，告诉我数据流是什么、每个脚本在做什么、变量命名的规律是什么。"</p>
+      </blockquote>
+      <p>它会给你一份白话说明，帮你搞清楚这段代码的逻辑。然后：</p>
+      <blockquote>
+        <p>"我现在换了新的仪器，输出格式变了，帮我把数据读取部分改一下，其他逻辑不动。"</p>
+      </blockquote>
+      <p>它能精准定位需要改的地方，不会把整个脚本翻一遍。组里换人、项目交接、导师让你复现两年前的结果——这些场景下，AI 等于帮你补了一个随时在线的"老人"。</p>
+    </div>
+
+    <div class="summary-callout">
+      <p>这些任务的共同点——之前要么你学了语言才能做，要么反复手工操作。现在门槛变成：<strong>你知道自己想要什么结果就够了。</strong></p>
+    </div>
+
+    <!-- ── Section 6 ───────────────────────────────────────── -->
+
+    <h2>进一步扩展：Skill 与 MCP 生态</h2>
+
+    <h3>Skills：可复用的专家经验</h3>
+
+    <p>Skill 是一段写好的指令集，告诉 AI 遇到某类任务该怎么做——相当于把经验固化成可重复调用的模板。</p>
+
+    <p><strong>重要的是：这些 Skill 不需要你自己写。</strong>Claude Code 有一个开放社区，全球开发者和研究者持续贡献各类 Skill——统计分析、代码审查、文献阅读、论文润色……你可以直接安装使用。</p>
+
+    <p>课题组自己能写的：</p>
+
+    <div class="skills-list">
+      <div class="skill-item"><code>/投稿格式</code> — 按期刊 Author Guidelines 排好稿子</div>
+      <div class="skill-item"><code>/统计检验</code> — 根据实验设计推荐合适方法</div>
+      <div class="skill-item"><code>/数据质检</code> — 自动检查缺失值、异常值、单位不一致</div>
+      <div class="skill-item"><code>/摘要润色</code> — 按"方法-结果-结论"结构检查摘要，标出逻辑跳跃</div>
+    </div>
+
+    <h3>MCP：连接你已经在用的工具</h3>
+
+    <p>MCP（Model Context Protocol）是 Anthropic 推出的开放协议，让 AI 能直接调用外部应用。有庞大的开源社区生态。</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>MCP</th>
+            <th>能做什么</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Notion / 飞书</strong></td>
+            <td>实验记录自动整理进数据库，生成会议纪要</td>
+          </tr>
+          <tr>
+            <td><strong>GitHub</strong></td>
+            <td>读仓库、提交修改、管理版本</td>
+          </tr>
+          <tr>
+            <td><strong>邮件客户端</strong></td>
+            <td>起草审稿回复、投稿确认邮件</td>
+          </tr>
+          <tr>
+            <td><strong>文献数据库</strong></td>
+            <td>查 PubMed、导出引用格式（需额外配置）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>官方 MCP 列表：<a href="https://modelcontextprotocol.io" target="_blank" rel="noopener">modelcontextprotocol.io</a></p>
+
+    <h3>为什么生态很重要</h3>
+
+    <blockquote>
+      <p>你现在不需要是专家，但你可以直接用专家写好的技能。</p>
+      <p>当一个统计学家把他的分析方法封装成 Skill，当一个资深编辑把润色逻辑写进工作流，这些经验就变成了你可以直接调用的能力——不需要你从头学。</p>
+      <p>先站在巨人的肩膀上把事情做出来。在这个过程里，你会慢慢理解背后的逻辑。当你摸清了自己课题组的工作流——怎么清洗这类数据、投这个领域的期刊有哪些注意事项、你们组跑质谱的标准流程是什么——你就可以把这些经验写成 Skill，发出去，让全世界做同类研究的人都能用。</p>
+    </blockquote>
+
+    <p><strong>你不只是用工具的人，你也可以是给工具加能力的人。</strong></p>
+
+    <!-- ── Section 7 ───────────────────────────────────────── -->
+
+    <h2>延伸资源</h2>
+
+    <div class="resource-group">
+      <h3>原始参考资料</h3>
+      <ul>
+        <li><a href="https://github.com/aspi6246/ClaudeCodeTools/blob/main/Presentations/main.pdf" target="_blank" rel="noopener">Claude Code for Academics（原始英文演讲稿）</a> — Alessandro Spina, UTS, 2026 年 3 月</li>
+        <li><a href="https://claude.com/blog/product-management-on-the-ai-exponential" target="_blank" rel="noopener">Anthropic 博客：AI 时代的产品管理</a> — Cat Wu, 2026</li>
+      </ul>
+    </div>
+
+    <div class="resource-group">
+      <h3>工具入口</h3>
+      <ul>
+        <li><a href="https://platform.moonshot.cn" target="_blank" rel="noopener">Kimi Code（月之暗面）</a> — 国内首选，Anthropic API 兼容</li>
+        <li><a href="https://cursor.sh" target="_blank" rel="noopener">Cursor</a> — 图形界面，门槛最低</li>
+        <li><a href="https://code.claude.com" target="_blank" rel="noopener">Claude Code</a> — 功能最完整</li>
+      </ul>
+    </div>
+
+    <div class="resource-group">
+      <h3>社区与教程</h3>
+      <ul>
+        <li><a href="https://causalinf.substack.com" target="_blank" rel="noopener">Cunningham 博客系列</a> — 12+ 篇 Claude Code 科研使用经验（英文，建议 AI 实时翻译阅读）</li>
+        <li><a href="https://github.com/pedrohcgs/claude-code-my-workflow" target="_blank" rel="noopener">Sant'Anna 工作流</a> — 5 阶段科研生产工作流</li>
+        <li><a href="https://github.com/scunning1975/MixtapeTools" target="_blank" rel="noopener">MixtapeTools Skills 库</a> — 可直接复用的科研 Skill 集合</li>
+        <li><a href="https://modelcontextprotocol.io" target="_blank" rel="noopener">MCP 官方列表</a></li>
+      </ul>
+    </div>
+
+    <!-- ── Closing ─────────────────────────────────────────── -->
+
+    <blockquote class="closing">
+      <p>工具会换，模型会迭代，今天的 Kimi 三个月后可能不是最好的选择——这没关系。</p>
+      <p>真正的护城河不在工具里。你花了五年、十年建立起来的领域直觉——知道哪个数据点看起来不对、知道这个实验设计有没有潜在的混淆变量、知道这个结果在行内意味着什么——这些是 AI 的天花板，不是 AI 的替代品。</p>
+      <p>执行力暴涨的时代，判断力才稀缺。先把工具用起来，剩下的交给你自己。</p>
+    </blockquote>
+
+    <!-- ── Anthropic Tips ───────────────────────────────────── -->
+
+    <div class="tips-section">
+      <h2>使用提示</h2>
+      <p>从 Anthropic 内部实践提炼，转译成科研语境：</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>原则</th>
+              <th>科研版解读</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Demo 优先，而非文档优先</strong></td>
+              <td>先让 AI 跑出一张图，再讨论方法对不对。与其写两页分析思路，不如五分钟出结果。</td>
+            </tr>
+            <tr>
+              <td><strong>短周期试验，而非大计划</strong></td>
+              <td>不要想着"把整个分析流程 AI 化"，先找今天最烦的一件事试试。</td>
+            </tr>
+            <tr>
+              <td><strong>旧流程用新模型重跑</strong></td>
+              <td>三个月前觉得 AI 做不到的事，现在可能可以了。定期把旧的难题再问一遍。</td>
+            </tr>
+            <tr>
+              <td><strong>做最简单的版本</strong></td>
+              <td>先用最直白的语言说清楚你要什么，别花太多时间调 prompt。</td>
+            </tr>
+            <tr>
+              <td><strong>模糊角色边界</strong></td>
+              <td>你不需要成为程序员才能跑代码，不需要是统计学家才能做统计——你需要的是判断结果对不对的眼光。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────────── -->
+
+  <footer>
+    <p class="footer-note">
+      <strong>参考来源：</strong>Alessandro Spina, <em>Claude Code for Academics</em>, UTS Finance Brownbag, 2026 年 3 月 &middot;
+      Cat Wu, <em>Product Management on the AI Exponential</em>, Anthropic Blog, 2026 &middot;
+      METR Research — Opus 4.6 vs Sonnet 3.5 速度对比数据 &middot;
+      TechCrunch, <em>Cursor admits its new coding model was built on top of Moonshot AI's Kimi</em>, 2026 年 3 月 22 日 &middot;
+      Naval Ravikant — "Software was eaten by AI" &middot;
+      Yves Yang (@SelfBystander) — AI 能力边界即知识边界
+    </p>
+    <p class="footer-note">
+      本指南的框架与设计大量参考了
+      <a href="https://happycapy.com" target="_blank" rel="noopener">HappyCapy</a>
+      平台的文档与工作流设计，在此致谢。
+    </p>
+    <p class="footer-note">
+      内容以 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a> 授权。由 Claude Code 协助写作。
+    </p>
+  </footer>
+
+</body>
+</html>
