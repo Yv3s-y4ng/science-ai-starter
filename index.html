@@ -10,6 +10,20 @@
 </head>
 <body>
 
+  <nav class="toc" aria-label="目录">
+    <ul>
+      <li><a href="#s1">你在用 AI 做什么</a></li>
+      <li><a href="#s2">差在哪里</a></li>
+      <li><a href="#s3">AI 终端智能体</a></li>
+      <li><a href="#s4">工具选哪个</a></li>
+      <li><a href="#s5">课题组能做什么</a></li>
+      <li><a href="#s6">Skill 与 MCP 生态</a></li>
+      <li><a href="#s7">延伸资源</a></li>
+      <li><a href="#s8">致谢</a></li>
+      <li><a href="#s9">活案例</a></li>
+    </ul>
+  </nav>
+
   <div class="lang-switch">
     <a href="en/">English</a>
   </div>
@@ -47,7 +61,7 @@
 
     <!-- ── Section 1 ───────────────────────────────────────── -->
 
-    <h2>你现在在用 AI 做什么</h2>
+    <h2 id="s1">你现在在用 AI 做什么</h2>
 
     <p>你可能在用 ChatGPT 改文字、翻译、解释 error message，或者生图，再复制粘贴回去。贴进去，得到回答，复制出来，再贴下一段。</p>
 
@@ -59,7 +73,7 @@
 
     <!-- ── Section 2 ───────────────────────────────────────── -->
 
-    <h2>差在哪里</h2>
+    <h2 id="s2">差在哪里</h2>
 
     <p>复制粘贴循环的存在，是因为今天大多数人使用 AI 的方式有四个结构性限制：</p>
 
@@ -78,7 +92,7 @@
 
     <!-- ── Section 3 ───────────────────────────────────────── -->
 
-    <h2>AI 终端智能体是什么</h2>
+    <h2 id="s3">AI 终端智能体是什么</h2>
 
     <p>AI 终端智能体把玻璃拿掉了。它不再坐在对话框后面等你贴东西，而是直接操作你电脑上的文件和程序：打开文件、写代码、运行、看结果、发现问题、修改、再运行——全部自己来。</p>
 
@@ -100,7 +114,7 @@
 
     <!-- ── Section 4 ───────────────────────────────────────── -->
 
-    <h2>工具选哪个</h2>
+    <h2 id="s4">工具选哪个</h2>
 
     <p>有四个工具值得了解，从门槛最低到功能最全各有侧重。</p>
 
@@ -173,7 +187,7 @@ export ANTHROPIC_API_KEY="你的 Kimi API Key"</code></pre>
 
     <!-- ── Section 5 ───────────────────────────────────────── -->
 
-    <h2>课题组能用来做什么</h2>
+    <h2 id="s5">课题组能用来做什么</h2>
 
     <p>以下五个场景直接来自科研工作流，每一个今天就能做。</p>
 
@@ -232,7 +246,7 @@ export ANTHROPIC_API_KEY="你的 Kimi API Key"</code></pre>
 
     <!-- ── Section 6 ───────────────────────────────────────── -->
 
-    <h2>进一步扩展：Skill 与 MCP 生态</h2>
+    <h2 id="s6">进一步扩展：Skill 与 MCP 生态</h2>
 
     <h3>Skills：可复用的专家经验</h3>
 
@@ -296,7 +310,7 @@ export ANTHROPIC_API_KEY="你的 Kimi API Key"</code></pre>
 
     <!-- ── Section 7 ───────────────────────────────────────── -->
 
-    <h2>延伸资源</h2>
+    <h2 id="s7">延伸资源</h2>
 
     <div class="resource-group">
       <h3>原始参考资料</h3>
@@ -337,7 +351,7 @@ export ANTHROPIC_API_KEY="你的 Kimi API Key"</code></pre>
     <!-- ── Acknowledgments ────────────────────────────────── -->
 
     <section class="acknowledgments">
-      <h2>致谢</h2>
+      <h2 id="s8">致谢</h2>
 
       <div class="ack-item ack-happycapy">
         <a href="https://happycapy.ai/?via=yves" target="_blank" rel="noopener">
@@ -412,7 +426,7 @@ export ANTHROPIC_API_KEY="你的 Kimi API Key"</code></pre>
     <!-- ── Meta ────────────────────────────────────────────── -->
 
     <section class="meta-section">
-      <h2>这个网站本身就是一个活案例</h2>
+      <h2 id="s9">这个网站本身就是一个活案例</h2>
 
       <p>你现在看到的这个页面，是用本文描述的方式做出来的。</p>
 
@@ -438,7 +452,7 @@ export ANTHROPIC_API_KEY="你的 Kimi API Key"</code></pre>
         <p>这就是全部。不需要学 HTML，不需要懂 CSS，不需要知道什么是服务器。你只需要知道你想说什么。</p>
       </div>
 
-      <p class="meta-note">本页面由 Claude Code 协助构建，内容由 Yves Yang 撰写与审定。</p>
+      <p class="meta-note">本页面由 <a href="https://happycapy.ai/?via=yves" target="_blank" rel="noopener">happycapy</a> 协助构建，内容由 Yves Yang 撰写与审定。</p>
     </section>
 
   </main>
@@ -459,5 +473,26 @@ export ANTHROPIC_API_KEY="你的 Kimi API Key"</code></pre>
     </p>
   </footer>
 
+<script>
+  (function() {
+    const ids = ['s1','s2','s3','s4','s5','s6','s7','s8','s9'];
+    const links = {};
+    ids.forEach(id => {
+      const a = document.querySelector('.toc a[href="#' + id + '"]');
+      if (a) links[id] = a;
+    });
+    function update() {
+      let current = ids[0];
+      ids.forEach(id => {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= 120) current = id;
+      });
+      Object.values(links).forEach(a => a.classList.remove('active'));
+      if (links[current]) links[current].classList.add('active');
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  })();
+</script>
 </body>
 </html>
