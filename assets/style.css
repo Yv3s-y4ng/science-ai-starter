@@ -502,6 +502,27 @@ td strong {
   margin-top: 2.5rem;
 }
 
+/* ── Meta Section ─────────────────────────────────────────── */
+
+.meta-section {
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.meta-section h2 {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.meta-note {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 1.5rem;
+  font-style: italic;
+}
+
 /* ── Acknowledgments ──────────────────────────────────────── */
 
 .acknowledgments {
