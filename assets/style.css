@@ -502,6 +502,59 @@ td strong {
   margin-top: 2.5rem;
 }
 
+/* ── Acknowledgments ──────────────────────────────────────── */
+
+.acknowledgments {
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.acknowledgments h2 {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.ack-item {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.ack-item:last-child {
+  border-bottom: none;
+}
+
+.ack-happycapy {
+  align-items: center;
+}
+
+.ack-logo {
+  width: 120px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.ack-body p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--text);
+}
+
+@media (max-width: 480px) {
+  .ack-item {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .ack-logo {
+    width: 100px;
+  }
+}
+
 /* ── Footer ───────────────────────────────────────────────── */
 
 footer {
